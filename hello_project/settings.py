@@ -15,10 +15,11 @@ SECRET_KEY = 'django-insecure-t78d%5eitbv*%xgmwyw=l1_urmi0!h9b1qrw3yg8w$9v)m^n$%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "127.0.0.1",       # ✅ Localhost for development
-    "localhost",       # ✅ Allow localhost access
-    "your-app-name.onrender.com",  # ✅ Replace with your Render URL when deployed
+    "127.0.0.1",  # Localhost for development
+    "localhost",
+    "hello-world-7ghq.onrender.com",  # ✅ Add your Render domain here
 ]
+
 
 CORS_ALLOWED_ORIGINS = ["https://your-netlify-app.netlify.app"]  # If using a frontend
 CORS_ALLOW_CREDENTIALS = True
