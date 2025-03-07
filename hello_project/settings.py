@@ -1,51 +1,46 @@
-
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-t78d%5eitbv*%xgmwyw=l1_urmi0!h9b1qrw3yg8w$9v)m^n$%'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",  # Localhost for development
-    "localhost",
-    "hello-world-7ghq.onrender.com",  # ✅ Add your Render domain here
+# ALLOWED_HOSTS = [
+#     "127.0.0.1",
+#     "localhost",
+#     "hello-world-7ghq.onrender.com",
+# ]
+
+# ✅ Only allow specific origins instead of `CORS_ALLOW_ALL_ORIGINS = True`
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  
+    "https://tarunutla15.github.io"  
 ]
 
-
-CORS_ALLOWED_ORIGINS = ["https://your-netlify-app.netlify.app"]  # If using a frontend
-CORS_ALLOW_CREDENTIALS = True
-
-
-# Application definition
-
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "corsheaders",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "mymessage",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # ✅ Ensure it's at the very top
+    "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+# CORS_ALLOW_ALL_ORIGINS = True  # TEMPORARY: Allow all origins (for debugging)
+
 
 ROOT_URLCONF = 'hello_project.urls'
 
