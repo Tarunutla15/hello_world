@@ -4,11 +4,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t78d%5eitbv*%xgmwyw=l1_urmi0!h9b1qrw3yg8w$9v)m^n$%'
 DEBUG = True
 
-# ALLOWED_HOSTS = [
-#     "127.0.0.1",
-#     "localhost",
-#     "hello-world-7ghq.onrender.com",
-# ]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "https://hello-world-j6hv.onrender.com",
+]
 
 # ✅ Only allow specific origins instead of `CORS_ALLOW_ALL_ORIGINS = True`
 CORS_ALLOWED_ORIGINS = [
