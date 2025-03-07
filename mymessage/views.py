@@ -3,4 +3,4 @@ from rest_framework.decorators import api_view
 from django.http import HttpResponse
 
 def send_hello(request):
-    return HttpResponse("Hello from the Django!")
+    return HttpResponse("Hello from the Django?!")
